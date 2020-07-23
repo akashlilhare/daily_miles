@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import './models/dummy_data.dart';
-import './models/category_item.dart';
+import '../dummy_data.dart';
+import '../widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('DeliMeal'),
-      ),
+//      appBar: AppBar(
+//        title: Text('DeliMeal',style: Theme.of(context).textTheme.title,),
+//      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: GridView(

@@ -1,6 +1,8 @@
-import 'package:dailymiles/models/category_item.dart';
+import 'package:dailymiles/screen/meal_detail_screen.dart';
 import 'package:flutter/material.dart';
-import './cateories_screen.dart';
+import './screen/cateories_screen.dart';
+import './screen/category_meals_screen.dart';
+import 'screen/tab_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'DeliMeals',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        accentColor: Colors.amber,
+        accentColor: Colors.grey,
         canvasColor: Colors.lightBlueAccent,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
@@ -29,9 +31,13 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: CategoriesScreen(),
       routes:{
-        categoriesMeals: (ctx) =>CategoryMealScreen()
+        '/': (ctx) =>TabScreen(),
+        CategoryMealScreen.routeName: (ctx) =>CategoryMealScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen()
+      },
+      onUnknownRoute: (settings){
+        return MaterialPageRoute(builder: (ctx)=> CategoryMealScreen());
       },
     );
   }
@@ -48,7 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DeliMeals'),
+        title: Text('Meals',
+        style: Theme.of(context).textTheme.title.copyWith(fontSize: 30),),
       ),
       body: Center(
         child: Text('Navigation Time!'),
