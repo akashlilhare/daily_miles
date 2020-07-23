@@ -10,6 +10,7 @@ class CategoriesScreen extends StatelessWidget {
 //        title: Text('DeliMeal',style: Theme.of(context).textTheme.title,),
 //      ),
       body: Padding(
+
         padding: const EdgeInsets.all(10.0),
         child: GridView(
 
