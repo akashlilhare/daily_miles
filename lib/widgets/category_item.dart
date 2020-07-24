@@ -1,5 +1,7 @@
-import '../screen/category_meals_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../screen/category_meals_screen.dart';
 
 
 class CategoryItem extends StatelessWidget {
@@ -30,10 +32,11 @@ class CategoryItem extends StatelessWidget {
           style: Theme.of(context).textTheme.title,
         ),
         decoration: BoxDecoration(
+            shape: BoxShape.rectangle ,
             gradient: LinearGradient(
               colors: [
                 color.withOpacity(0.8),
-                color,
+                color
               ],
               begin: Alignment.topRight,
               end: Alignment.bottomRight,

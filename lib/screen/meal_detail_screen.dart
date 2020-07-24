@@ -19,8 +19,10 @@ class MealDetailScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
+        border: Border.all (
+            color: Colors.black ) ,
+        borderRadius: BorderRadius.circular (
+            30 ) ,
       ),
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
@@ -56,7 +58,9 @@ class MealDetailScreen extends StatelessWidget {
                 ),
               ]),
             ),
+
             buildSectionTitle(context, 'Ingredients'),
+
             buildContainer(
               ListView.builder(
                 itemBuilder: (ctx, index) => Card(
@@ -84,7 +88,8 @@ class MealDetailScreen extends StatelessWidget {
                         selectedMeal.steps[index],
                       ),
                     ),
-                    Divider()
+                    Divider (
+                      thickness: 2 , )
                   ],
                 ),
                 itemCount: selectedMeal.steps.length,

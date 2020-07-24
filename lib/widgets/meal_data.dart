@@ -1,6 +1,7 @@
 import 'package:dailymiles/models/meal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../screen/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
@@ -82,8 +83,9 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 20,
-                  right: 10,
+                  bottom: 5 ,
+                  right: 0 ,
+                  left: 100 ,
                   child: Container(
                     width: 300,
                     color: Colors.black54,
@@ -102,7 +104,8 @@ class MealItem extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all (
+                  15 ) ,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[

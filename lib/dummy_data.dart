@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './models/category.dart';
 import './models/meal.dart';
 const DUMMY_CATEGORIES = const [
@@ -60,6 +61,9 @@ const DUMMY_MEALS = const [
     categories: [
       'c1',
       'c2',
+      'c5' ,
+      'c9' ,
+      'c4'
     ],
     title: 'Spaghetti with Tomato Sauce',
     affordability: Affordability.Affordable,
@@ -93,6 +97,10 @@ const DUMMY_MEALS = const [
     id: 'm2',
     categories: [
       'c2',
+      'c8' ,
+      'c4' ,
+      'c7' ,
+      'c1'
     ],
     title: 'Toast Hawaii',
     affordability: Affordability.Affordable,
@@ -122,6 +130,9 @@ const DUMMY_MEALS = const [
     categories: [
       'c2',
       'c3',
+      'c6' ,
+      'c2' ,
+      'c8'
     ],
     title: 'Classic Hamburger',
     affordability: Affordability.Pricey,
@@ -153,6 +164,10 @@ const DUMMY_MEALS = const [
     id: 'm4',
     categories: [
       'c4',
+      'c1' ,
+      'c8' ,
+      'c7' ,
+      'c2'
     ],
     title: 'Wiener Schnitzel',
     affordability: Affordability.Luxurious,
@@ -190,6 +205,8 @@ const DUMMY_MEALS = const [
       'c2'
           'c5',
       'c10',
+      'c3' ,
+      'c1'
     ],
     title: 'Salad with Smoked Salmon',
     affordability: Affordability.Luxurious,
@@ -225,6 +242,9 @@ const DUMMY_MEALS = const [
     categories: [
       'c6',
       'c10',
+      'c9' ,
+      'c4' ,
+      'c2'
     ],
     title: 'Delicious Orange Mousse',
     affordability: Affordability.Affordable,
@@ -260,6 +280,10 @@ const DUMMY_MEALS = const [
     id: 'm7',
     categories: [
       'c7',
+      'c3' ,
+      'c1' ,
+      'c8' ,
+      'c5'
     ],
     title: 'Pancakes',
     affordability: Affordability.Affordable,
