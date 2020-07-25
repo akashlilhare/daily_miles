@@ -1,19 +1,57 @@
+import 'package:dailymiles/models/meal.dart';
 import 'package:dailymiles/widgets/meal_data.dart';
 import 'package:flutter/material.dart';
-import '../dummy_data.dart';
 
-class CategoryMealScreen extends StatelessWidget {
+class CategoryMealScreen extends StatefulWidget {
   static const routeName = '/categoies-meals';
 
+  final List<Meal> availableMeals;
+
+  CategoryMealScreen(this.availableMeals);
+
   @override
-  Widget build(BuildContext context) {
-    final routeArgs =
-        ModalRoute.of(context).settings.arguments as Map<String, String>;
-    final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['id'];
-    final categoryMeals = DUMMY_MEALS.where((meal) {
-      return meal.categories.contains(categoryId);
-    }).toList();
+  _CategoryMealScreenState createState()=>
+      _CategoryMealScreenState (
+      );
+}
+
+class _CategoryMealScreenState extends State<CategoryMealScreen> {
+  String categoryTitle;
+  List<Meal> displayedMeal;
+  var _loadedInitData = false;
+
+
+  @override
+  void didChangeDependencies(){
+    if ( !_loadedInitData ) {
+      final routeArgs =
+      ModalRoute
+          .of (
+          context )
+          .settings
+          .arguments as Map<String , String>;
+      categoryTitle = routeArgs['title'];
+      final categoryId = routeArgs['id'];
+      displayedMeal = widget.availableMeals.where (
+              (meal){
+            return meal.categories.contains(categoryId);
+          }).toList();
+      _loadedInitData = true;
+    }
+    super.didChangeDependencies (
+    );
+  }
+
+  void _removeMeal(String mealId){
+    setState (
+            (){
+          displayedMeal.removeWhere (
+                  (meal)=> meal.id == mealId );
+        } );
+  }
+
+  @override
+  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -24,15 +62,15 @@ class CategoryMealScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (ctx, index) {
           return MealItem(
-            id: categoryMeals[index].id,
-            title: categoryMeals[index].title,
-            imageUrl: categoryMeals[index].imageUrl,
-            duration: categoryMeals[index].duration,
-            affordability: categoryMeals[index].affordability,
-            complexity: categoryMeals[index].complexity,
+            id: displayedMeal[index].id ,
+            title: displayedMeal[index].title ,
+            imageUrl: displayedMeal[index].imageUrl ,
+            duration: displayedMeal[index].duration ,
+            affordability: displayedMeal[index].affordability ,
+            complexity: displayedMeal[index].complexity ,
           );
         },
-        itemCount: categoryMeals.length,
+        itemCount: displayedMeal.length ,
       ),
     );
   }
