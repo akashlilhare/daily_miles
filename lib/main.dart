@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         } );
   }
 
-  void _toggelFavorite(String mealId){
+  void _togelFavorite(String mealId){
     final existingIndex = _favoriteMeals.indexWhere (
             (meal)=> meal.id == mealId );
     if ( existingIndex >= 0 ) {
@@ -109,7 +109,7 @@ class _MyAppState extends State<MyApp> {
                 _availableMeals ) ,
         MealDetailScreen.routeName: (ctx)=>
             MealDetailScreen (
-                _toggelFavorite , _isMealFavorite ) ,
+                _togelFavorite , _isMealFavorite ) ,
         FilterScreen.routeName: (ctx)=>
             FilterScreen (
                 _filters , _setFilters ) ,
