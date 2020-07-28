@@ -12,8 +12,8 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
 
-
-  const MealItem({@required this.id ,
+  const MealItem({
+    @required this.id ,
     @required this.title ,
     @required this.imageUrl ,
     @required this.duration ,
@@ -56,9 +56,7 @@ class MealItem extends StatelessWidget {
   void selectMeal(BuildContext context){
     Navigator.of (
         context ).pushNamed (
-      MealDetailScreen.routeName ,
-      arguments: id , )
-
+        MealDetailScreen.routeName , arguments: id )
         .then (
             (result){
           if ( result != null ) {
@@ -66,7 +64,6 @@ class MealItem extends StatelessWidget {
           }
         } );
   }
-
 
   @override
   Widget build(BuildContext context){
@@ -172,5 +169,3 @@ class MealItem extends StatelessWidget {
     );
   }
 }
-
-

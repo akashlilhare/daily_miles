@@ -52,7 +52,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _togelFavorite(String mealId){
-    final existingIndex = _favoriteMeals.indexWhere (
+    final existingIndex =
+    _favoriteMeals.indexWhere (
             (meal)=> meal.id == mealId );
     if ( existingIndex >= 0 ) {
       setState (
@@ -60,8 +61,7 @@ class _MyAppState extends State<MyApp> {
             _favoriteMeals.removeAt (
                 existingIndex );
           } );
-    } else
-    {
+    } else {
       setState (
               (){
             _favoriteMeals.add (
@@ -90,17 +90,15 @@ class _MyAppState extends State<MyApp> {
               body1: TextStyle(
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
-              body2: TextStyle(
-                  color: Color.fromRGBO(20, 51, 51, 1)
-              ),
+              body2: TextStyle (
+                  color: Color.fromRGBO (
+                      20 , 51 , 51 , 1 ) ) ,
               title: TextStyle(
                 fontSize: 20,
-                fontWeight:FontWeight.bold,
+                fontWeight: FontWeight.bold ,
                 fontFamily: 'RobotoCondensed',
-              )
-          )
-      ),
-      routes:{
+              ) ) ) ,
+      routes: {
         '/': (ctx)=>
             TabScreen (
                 _favoriteMeals ) ,
@@ -113,7 +111,6 @@ class _MyAppState extends State<MyApp> {
         FilterScreen.routeName: (ctx)=>
             FilterScreen (
                 _filters , _setFilters ) ,
-
       },
       onUnknownRoute: (settings){
         return MaterialPageRoute (
@@ -131,13 +128,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meals',
-          style: Theme.of(context).textTheme.title.copyWith(fontSize: 30),),
+        title: Text (
+          'Meals' ,
+          style: Theme
+              .of (
+              context )
+              .textTheme
+              .title
+              .copyWith (
+              fontSize: 30 ) ,
+        ) ,
       ),
       body: Center(
         child: Text('Navigation Time!'),
@@ -145,7 +149,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-
-
