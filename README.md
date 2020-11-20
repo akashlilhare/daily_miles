@@ -1,4 +1,4 @@
-<img src="screen shot/ss.png" width="2400" height="400">
+<img src="screen shot/ss.png" width="3400" height="500">
 # dailymiles
 
 A new Flutter application.
