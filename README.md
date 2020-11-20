@@ -1,4 +1,4 @@
-<td><img src="screen%20short/ss.png" width="300" height="600"></td>
+<td><img src="daily_miles/screen%20short/ss.png" width="300" height="600"></td>
 # dailymiles
 
 A new Flutter application.
